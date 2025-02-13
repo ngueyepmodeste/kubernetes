@@ -1,3 +1,4 @@
+
 # kubernetes
 #commandes utilisées pour le TP1/
 
@@ -23,3 +24,12 @@
 - kubectl get nodes 
 - kubectl port-forward <name_pod>  5000:80 --address 0.0.0.0  
 
+        #Gestion du reseau dans K8s
+
+- kubectl apply -f namespace.yml
+- kubectl get namespace
+- kubectl describe  namespace production
+- kubectl get pods -n prod
+- kubectl get pods -n production
+- kubectl get replicaset -o -wide  -n "name_of_your_namespace"
+- kubectl describe pod pod-color-blue -n production 
