@@ -1,0 +1,30 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: nginx-pod
+
+spec:
+  replicas: 2
+  strategy:
+   type: RollingUpdate
+
+   rollingUpdate:
+
+     maxSurge: 1
+     maxUnavailable: 1
+
+  selector:
+    matchLabels:
+      app: nginx  # Important pour associer les Pods au Deployment
+
+  template:
+    metadata:
+      labels:
+        app: nginx  # Doit correspondre au selector.matchLabels
+
+    spec:
+      containers:
+      - name: app-nginx
+        image: nginx:1.18.0
+        ports:
+        - containerPort: 80
