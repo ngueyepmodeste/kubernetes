@@ -1,5 +1,6 @@
 # kubernetes
 #commandes utilisées pour le TP1/
+
        #pod
 
 - kubectl --version
