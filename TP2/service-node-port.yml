@@ -1,0 +1,17 @@
+apiVersion: v1
+
+kind: Service
+
+metadata:
+  name: service-node-port
+  namespace: production
+
+spec:
+  type: NodePort
+  ports:
+    - port: 8080         # Port accessible à l'intérieur du cluster
+      targetPort: 8080   # Port sur lequel le pod écoute
+      nodePort: 30008    # Port exposé sur chaque nœud (doit être entre 30000 et 32767)
+
+  selector:
+    app: web  # Corrigé : c'est "selector" et non "matchLabel"
