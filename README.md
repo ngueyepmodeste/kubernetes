@@ -33,3 +33,10 @@
 - kubectl get pods -n production
 - kubectl get replicaset -o -wide  -n "name_of_your_namespace"
 - kubectl describe pod pod-color-blue -n production 
+- kubectl get pods -n production --show-labels
+- kubectl get endpoints service-node-port -n production
+- kubectl describe pod pod-color-blue -n production | grep endpoint
+- kubectl describe -n production svc " name_of_your_service  "
+- 
+
+
